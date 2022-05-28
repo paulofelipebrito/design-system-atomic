@@ -9,6 +9,7 @@
   "devDependencies": {
     "husky": "^8.0.1",
     "lint-staged": "^12.4.2",
+    "node-sass": "^7.0.1",
     "postcss-scss": "^4.0.4",
     "prettier": "^2.6.2",
     "stylelint": "^14.8.5",
