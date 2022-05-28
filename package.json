@@ -1,0 +1,40 @@
+{
+  "name": "ATOMICdesignSystem",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/paulofelipebrito/design-system-atomic.git",
+  "author": "Paulo Felipe Brito <paulofelipebrito@hotmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^5.0.0"
+  },
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "playgrounds/*"
+    ],
+    "nohoist": [
+      "**/normalize-scss"
+    ]
+  },
+  "scripts": {
+    "build": "yarn lerna run build",
+    "dev": "yarn lerna run dev",
+    "test": "yarn lerna run test",
+    "publish": "yarn test && yarn build && yarn lerna publish",
+    "commit": "yarn git-cz",
+    "test:chromatic": "yarn lerna run test:chromatic",
+    "build:storybook": "yarn build && yarn lerna run build-storybook"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+} 
